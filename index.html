@@ -85,9 +85,20 @@
       const taskItem = document.createElement("li");
           const taskContent = document.createElement("span");
           taskContent.textContent = taskText;
+        const completCheckbox = document.createElement("input");
+        completeCheckbox.type = "checkbox";
+        taskItem.appendChild(completeCheckbox);
+        completeCheckbox.addEventListener("change", function() {
+          if (completeCheckbox.checked) {
+            taskContent.style.textDecoration = "line-through";
+          } else {
+            taskContent.style.textDecortaion = "none";
+          }
+        });
           taskItem.appendChild(taskContent);
         const deleteButton = document.createElement("button");
-        deleteButton.textContent = "❌";
+        deleteButton.textContent = "🗑️";
+
         taskItem.appendChild(deleteButton);
         deleteButton.addEventListener("click", function() {
           taskItem.remove();
