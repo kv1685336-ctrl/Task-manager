@@ -76,11 +76,12 @@
         if (taskText.trim() === "") {
           alert("please enter a task first!")
             return
-
+        }
       const taskItem = document.createElement("li");
           const taskContent = document.createElement("span");
           taskContent.textContent = taskText;
-          taskItem.appenChild(taskContent);
+          taskItem.appendChild(taskContent);
+        
           
         
         
