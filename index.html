@@ -50,6 +50,10 @@
         border-radius: 10px;
         overflow-wrap: anywhere;
       }
+      h1 {
+        color: #BA8E23;
+        margin-bottom: 10px;
+      }
       
         
     </style>
@@ -60,12 +64,30 @@
     <h1>STUDENT TASK MANAGER</h1>
     <textarea> id="taskInput" placeHolder="write your task here"></textarea>
     <button id="addTask">add task</button>
-    <h2>MY TASKS</h2>
+    <h1></h1>MY TASKS</h1>
     <ul id="my-tasks" ></ul>
 
     <script>
+      const taskInput = document.getElementById("taskInput")
+      const addTask = document.getElementById("addTask")
+      const myTasks = document.getElementById("my-tasks")
+      addTask.addEventListener("click", function() {
+        const taskText = taskInput.value.trim();
+        if (taskText.trim() === "") {
+          alert("please enter a task first!")
+            return
+
+      const taskItem = document.createElement("li");
+          const taskContent = document.createElement("span");
+          taskContent.textContent = taskText;
+          taskItem.appenChild(taskContent);
+          
+        
+        
+        
+                               
       
-    </script>
+    <script>
     
   </body>
 </html>
