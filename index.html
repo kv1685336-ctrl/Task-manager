@@ -81,13 +81,16 @@
           const taskContent = document.createElement("span");
           taskContent.textContent = taskText;
           taskItem.appendChild(taskContent);
-        
-          
-        
-        
-        
-                               
-      
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "❌";
+        taskItem.appendChild(deleteButton);
+        deleteButton.addEventListener("click", function() {
+          taskItem.remove();
+        });
+
+        myTasks.appendChild(taskItem);
+        taskInput.value = "";
+      });
     <script>
     
   </body>
